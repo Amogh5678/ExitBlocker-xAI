@@ -4,7 +4,7 @@ import pickle
 import pandas as pd
 import shap
 import numpy as np
-from lime.lime_tabular import LimeTabularExplainer
+#from lime.lime_tabular import LimeTabularExplainer
 import os
 
 app = Flask(__name__)
