@@ -30,6 +30,9 @@ const ChurnForm = () => {
   const [error, setError] = useState(null);
   const [activeSection, setActiveSection] = useState(0);
 
+  // Get API base URL from environment variable or use localhost for development
+  const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
   // Handle form input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -56,7 +59,7 @@ const ChurnForm = () => {
       };
 
       // Prediction API call
-      const predResponse = await fetch('http://localhost:5000/predict', {
+      const predResponse = await fetch(`${API_BASE_URL}/predict`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -72,7 +75,7 @@ const ChurnForm = () => {
       setPrediction(predResult);
 
       // SHAP explanation API call
-      const shapResponse = await fetch('http://localhost:5000/explain/shap', {
+      const shapResponse = await fetch(`${API_BASE_URL}/explain/shap`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

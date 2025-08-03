@@ -5,6 +5,7 @@ import pandas as pd
 import shap
 import numpy as np
 from lime.lime_tabular import LimeTabularExplainer
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -138,4 +139,5 @@ def preprocess_input(data):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)
