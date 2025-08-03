@@ -8,7 +8,10 @@ import numpy as np
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=[
+    "https://exit-blocker-x-ai.vercel.app",  # Your Vercel frontend URL
+    "http://localhost:3000"                   # For local development
+])
 
 # ===========================
 # Load Model, Encoders & Scaler
