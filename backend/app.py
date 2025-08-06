@@ -27,7 +27,7 @@ with open("encoders (1).pkl", "rb") as f:
     encoders = pickle.load(f)
 
 # Preload SHAP Explainer (using XGBoost from voting classifier)
-shap_explainer = shap.TreeExplainer(model.named_estimators_["xgb"])
+#shap_explainer = shap.TreeExplainer(model.named_estimators_["xgb"])
 
 # Preload LIME Explainer (using training data for reference)
 # You need to have X_train_smote saved as well
