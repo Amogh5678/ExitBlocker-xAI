@@ -31,7 +31,8 @@ const ChurnForm = () => {
   const [activeSection, setActiveSection] = useState(0);
 
   // Get API base URL from environment variable or use localhost for development
-  const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+  //const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+  const API_BASE_URL = 'https://exitblocker-xai.onrender.com';
 
   // Handle form input changes
   const handleInputChange = (e) => {
