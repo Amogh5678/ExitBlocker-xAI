@@ -8,9 +8,10 @@ import numpy as np
 import os
 
 app = Flask(__name__)
-CORS(app, origins="*")
+#CORS(app, origins="*")
 CORS(app, origins=[
     "https://exit-blocker-x-ai.vercel.app",
+    "https://exit-blocker-x-ai-git-main-amoghs-projects-415ac663.vercel.app/"
     "http://localhost:3000",
     "http://localhost:5173",
     "http://127.0.0.1:3000",
